@@ -5,8 +5,77 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Actividad1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Formulario StackPanel" 
+        Height="450" 
+        Width="800"
+        MinHeight="400"
+        MinWidth="400">
     <StackPanel>
-        
+        <StackPanel 
+            Margin="10">
+            <StackPanel.Background>
+                <LinearGradientBrush
+                    EndPoint="0.5,1"
+                    StartPoint="0.5,0">
+                    <GradientStop
+                        Color="#FF571599"
+                        Offset="0.5" />
+                    <GradientStop
+                        Color="White"
+                        Offset="1" />
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <TextBlock
+                Text="Nombre"
+                FontSize="16"
+                FontWeight="Bold"
+                Margin="10,10,10,0"/>
+            <TextBox 
+                Margin="10,5,10,10"></TextBox>
+        </StackPanel>
+        <StackPanel
+            Margin="10">
+            <StackPanel.Background>
+                <LinearGradientBrush
+                    EndPoint="0.5,1"
+                    StartPoint="0.5,0">
+                    <GradientStop
+                        Color="#FFA2D853"
+                        Offset="0.5" />
+                    <GradientStop
+                        Color="White"
+                        Offset="1" />
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <TextBlock
+                Text="Dirección"
+                FontSize="16"
+                FontWeight="Bold"
+                Margin="10,10,10,0" />
+            <TextBox
+                Margin="10,5,10,10"></TextBox>
+        </StackPanel>
+        <StackPanel
+            Margin="10">
+            <StackPanel.Background>
+                <LinearGradientBrush
+                    EndPoint="0.5,1"
+                    StartPoint="0.5,0">
+                    <GradientStop
+                        Color="#FF48ACC9"
+                        Offset="0.5" />
+                    <GradientStop
+                        Color="White"
+                        Offset="1" />
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <TextBlock
+                Text="Correo electrónico"
+                FontSize="16"
+                FontWeight="Bold"
+                Margin="10,10,10,0" />
+            <TextBox
+                Margin="10,5,10,10"></TextBox>
+        </StackPanel>
     </StackPanel>
 </Window>
