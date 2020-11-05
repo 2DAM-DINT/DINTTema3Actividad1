@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Actividad1"
         mc:Ignorable="d"
         Title="Formulario StackPanel"
         Icon=".\recursos\form.ico"
@@ -11,90 +10,103 @@
         Width="800"
         MinWidth="400"
         MaxWidth="900">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Margin" Value="10,10,10,0" />
+        </Style>
+        
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Padding" Value="2" />
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+
+        <Style TargetType="{x:Type StackPanel}">
+            <Setter Property="Margin" Value="5" />
+        </Style>
+
+        <Style TargetType="{x:Type StackPanel}" x:Key="botones" BasedOn="{StaticResource {x:Type StackPanel}}">
+            <Setter Property="Orientation" Value="Horizontal" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+        </Style>
+
+        <Style TargetType="{x:Type StackPanel}" x:Key="gradienteNombre" BasedOn="{StaticResource {x:Type StackPanel}}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush
+                        EndPoint="0.5,1"
+                        StartPoint="0.5,0">
+                        <GradientStop
+                            Color="#FF571599"
+                            Offset="0.5" />
+                        <GradientStop
+                            Color="White"
+                            Offset="1" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type StackPanel}" x:Key="gradienteDireccion" BasedOn="{StaticResource {x:Type StackPanel}}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush
+                        EndPoint="0.5,1"
+                        StartPoint="0.5,0">
+                        <GradientStop
+                            Color="#FFA2D853"
+                            Offset="0.5" />
+                        <GradientStop
+                            Color="White"
+                            Offset="1" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type StackPanel}" x:Key="gradienteCorreo" BasedOn="{StaticResource {x:Type StackPanel}}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush
+                        EndPoint="0.5,1"
+                        StartPoint="0.5,0">
+                        <GradientStop
+                            Color="#FF48ACC9"
+                            Offset="0.5" />
+                        <GradientStop
+                            Color="White"
+                            Offset="1" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Margin" Value="10,5,10,10"/>
+        </Style>
+    </Window.Resources>
+    
     <StackPanel>
-        <StackPanel 
-            Margin="10">
-            <StackPanel.Background>
-                <LinearGradientBrush
-                    EndPoint="0.5,1"
-                    StartPoint="0.5,0">
-                    <GradientStop
-                        Color="#FF571599"
-                        Offset="0.5" />
-                    <GradientStop
-                        Color="White"
-                        Offset="1" />
-                </LinearGradientBrush>
-            </StackPanel.Background>
-            <TextBlock
-                Text="Nombre"
-                FontSize="16"
-                FontWeight="Bold"
-                Margin="10,10,10,0"/>
-            <TextBox 
-                Margin="10,5,10,10"></TextBox>
+        <StackPanel Style="{StaticResource gradienteNombre}">
+            <TextBlock Text="Nombre"/>
+            <TextBox/>
         </StackPanel>
-        <StackPanel
-            Margin="10">
-            <StackPanel.Background>
-                <LinearGradientBrush
-                    EndPoint="0.5,1"
-                    StartPoint="0.5,0">
-                    <GradientStop
-                        Color="#FFA2D853"
-                        Offset="0.5" />
-                    <GradientStop
-                        Color="White"
-                        Offset="1" />
-                </LinearGradientBrush>
-            </StackPanel.Background>
-            <TextBlock
-                Text="Dirección"
-                FontSize="16"
-                FontWeight="Bold"
-                Margin="10,10,10,0" />
-            <TextBox
-                Margin="10,5,10,10"></TextBox>
+        <StackPanel Style="{StaticResource gradienteDireccion}">
+            <TextBlock Text="Dirección" />
+            <TextBox/>
         </StackPanel>
-        <StackPanel
-            Margin="10">
-            <StackPanel.Background>
-                <LinearGradientBrush
-                    EndPoint="0.5,1"
-                    StartPoint="0.5,0">
-                    <GradientStop
-                        Color="#FF48ACC9"
-                        Offset="0.5" />
-                    <GradientStop
-                        Color="White"
-                        Offset="1" />
-                </LinearGradientBrush>
-            </StackPanel.Background>
-            <TextBlock
-                Text="Correo electrónico"
-                FontSize="16"
-                FontWeight="Bold"
-                Margin="10,10,10,0" />
-            <TextBox
-                Margin="10,5,10,10"
-                MinWidth="500"
-                MaxWidth="700"
-                HorizontalAlignment="Left"></TextBox>
+        <StackPanel Style="{StaticResource gradienteCorreo}">
+            <TextBlock Text="Correo electrónico" />
+            <TextBox MinWidth="500"
+                     MaxWidth="700"
+                     HorizontalAlignment="Left"/>
         </StackPanel>
-        <StackPanel
-            Margin="10"
-            Orientation="Horizontal"
-            HorizontalAlignment="Right">
-            <Button
-                Content="Aceptar"
-                Padding="2"
-                Width="100"
-                Margin="10,10,5,10" />
-            <Button
-                Content="Cancelar"
-                Padding="2"
-                Width="100"
-                Margin="5,10,0,10" />
+        <StackPanel Style="{StaticResource botones}">
+            <Button Content="Aceptar" />
+            <Button Content="Cancelar" />
         </StackPanel>
     </StackPanel>
 </Window>
